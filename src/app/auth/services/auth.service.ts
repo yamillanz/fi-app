@@ -32,13 +32,22 @@ export class AuthService {
     return idToken(this.auth);
   }
 
-  constructor(private emailSender: SendEmailService, private router: Router) {}
+  constructor(private emailSender: SendEmailService, private router: Router) {
+    // this.userState$.subscribe((user) => {
+    //   if (user) {
+    //     this._userIsAuthenticated.set(true);
+    //   } else {
+    //     this._userIsAuthenticated.set(false);
+    //   }
+    // });
+  }
 
   async signInWithGoogle(): Promise<void> {
     try {
       await signInWithRedirect(this.auth, this.gLoginProvider);
-      // const id_TOKEN = await this.auth.currentUser?.getIdToken()
-      // await signInWithCustomToken(this.auth, 'token');
+      const id_TOKEN = await this.auth.currentUser?.getIdToken();
+      console.log('🚀 ~ file: auth.service.ts:40 ~ AuthService ~ signInWithGoogle ~ id_TOKEN', id_TOKEN);
+
       this._userIsAuthenticated.set(true);
     } catch (error) {
       console.log('error', error);

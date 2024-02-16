@@ -10,7 +10,7 @@ import { LayoutService, AppConfig } from '../app/services/app.layout.service';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  providers: [LayoutService,],
+  providers: [LayoutService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

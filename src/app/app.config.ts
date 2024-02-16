@@ -23,8 +23,8 @@ export const appConfig: ApplicationConfig = {
           apiKey: 'AIzaSyCw6zGEsPGaRR6AI9XnjoUcxVSyrBJZBMY',
           authDomain: 'fi-db-9eb45.firebaseapp.com',
           messagingSenderId: '41426323415',
-        })
-      )
+        }),
+      ),
     ),
     importProvidersFrom(provideAuth(() => getAuth())),
     importProvidersFrom(provideDatabase(() => getDatabase())),
