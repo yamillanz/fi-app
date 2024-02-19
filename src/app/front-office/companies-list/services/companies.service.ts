@@ -11,11 +11,11 @@ export class CompaniesService {
 
   getCompanies() {
     // const companies = list(ref(this.db, 'companies'));
-    const companies = listVal(ref(this.db, 'companies')); 
+    // const companies = listVal(ref(this.db, 'companies')); 
 
-    companies.subscribe((data) => {
-      console.log('🚀 ~ file: auth.service.ts:47 ~ AuthService ~ getCompanies ~ data', data);
-    });
+    // companies.subscribe((data) => {
+    //   console.log('🚀 ~ file: auth.service.ts:47 ~ AuthService ~ getCompanies ~ data', data);
+    // });
 
   }
 

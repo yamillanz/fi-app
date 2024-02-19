@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { WebcamImage, WebcamInitError, WebcamModule } from 'ngx-webcam';
 import { ButtonModule } from 'primeng/button';
 import { Observable, Subject } from 'rxjs';
@@ -15,6 +15,21 @@ export class CameraComponent {
   showWebcam = true;
   public webcamImage?: WebcamImage;
   private trigger: Subject<void> = new Subject<void>();
+
+  width: number = window.innerWidth < 768 ? window.innerWidth - 10 : window.innerWidth / 2;
+  height: number = window.innerWidth < 768 ? window.innerHeight / 2 : window.innerHeight - 10;
+
+  // private screenWidth: any;
+  // private screenHeight: any;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    // this.screenWidth = window.innerWidth;
+    // this.screenHeight = window.innerHeight;
+    this.width = window.innerWidth < 768 ? window.innerWidth - 10 : window.innerWidth / 2;
+    this.height = window.innerWidth < 768 ? window.innerHeight / 2 : window.innerHeight - 10;
+    // console.log('Width: ' + this.screenWidth + ' Height: ' + this.screenHeight);
+  }
 
   public handleImage(webcamImage: WebcamImage): void {
     console.info('received webcam image', webcamImage);
