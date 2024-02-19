@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Database, list, ref, push, update, object } from '@angular/fire/database';
+import { Database, list, ref, push, update, object, listVal } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +10,13 @@ export class CompaniesService {
   constructor() {}
 
   getCompanies() {
-    const companies = list(ref(this.db, 'companies'));
+    // const companies = list(ref(this.db, 'companies'));
+    const companies = listVal(ref(this.db, 'companies')); 
+
     companies.subscribe((data) => {
-      console.log('🚀 ~ file: auth.service.ts:47 ~ AuthService ~ constructor ~ data', data);
+      console.log('🚀 ~ file: auth.service.ts:47 ~ AuthService ~ getCompanies ~ data', data);
     });
-    const companies2 = object(ref(this.db, 'companies'));
+
   }
 
   createCompany() {
@@ -33,14 +35,13 @@ export class CompaniesService {
       phone: '123456789',
     };
     update(ref(this.db, 'companies'), company);
-    
   }
 
   removeCompany() {
     const refDb: any = ref(this.db, 'companies');
 
     // const query = orderByValue();
-    
+
     // remove(ref(this.db, 'companies'));
   }
 }

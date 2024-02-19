@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import { CompaniesService } from './services/companies.service';
 
 @Component({
   selector: 'app-companies-list',
@@ -11,6 +12,7 @@ import { TableModule } from 'primeng/table';
   styleUrl: './companies-list.component.scss',
 })
 export class CompaniesListComponent {
+  companiesServ = inject(CompaniesService);
   companies = [
     {
       name: 'Empresa 1',
@@ -44,8 +46,11 @@ export class CompaniesListComponent {
     },
   ];
 
+  constructor() {
+    this.companiesServ.getCompanies();
+  }
   editing: boolean = false;
 
-  onRowEditInit(company : any) {}
-  deleteSelectedProducts(company : any) {}
+  onRowEditInit(company: any) {}
+  deleteSelectedProducts(company: any) {}
 }

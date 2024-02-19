@@ -49,7 +49,7 @@ export class LoginComponent {
       console.log('logged');
       this.router.navigate(['/homelogin']);
     }
-    this.visibleErrorMessage = true;
+    // this.visibleErrorMessage = true;
   }
 
   closeErrorMessage() {
