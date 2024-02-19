@@ -19,15 +19,12 @@ export class CameraComponent {
   width: number = window.innerWidth < 768 ? window.innerWidth - 10 : window.innerWidth / 2;
   height: number = window.innerWidth < 768 ? window.innerHeight / 2 : window.innerHeight - 10;
 
-  // private screenWidth: any;
-  // private screenHeight: any;
-
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     // this.screenWidth = window.innerWidth;
     // this.screenHeight = window.innerHeight;
     this.width = window.innerWidth < 768 ? window.innerWidth - 10 : window.innerWidth / 2;
-    this.height = window.innerWidth < 768 ? window.innerHeight / 2 : window.innerHeight - 10;
+    this.height = window.innerWidth < 768 ? Math.round(window.innerHeight / 1.5) : window.innerHeight;
     // console.log('Width: ' + this.screenWidth + ' Height: ' + this.screenHeight);
   }
 
