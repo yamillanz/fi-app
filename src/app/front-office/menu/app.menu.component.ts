@@ -21,7 +21,7 @@ export class AppMenuComponent implements OnInit {
         label: 'FastInvoice',
         items: [
           { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/homelogin'] },
-          { label: 'Escaneo Facturas', icon: 'pi pi-fw pi-home', routerLink: ['/homelogin'] },
+          { label: 'Escaneo Facturas', icon: 'pi pi-fw pi-home', routerLink: ['/homelogin/scan-invoice'] },
         ],
       },
       // {

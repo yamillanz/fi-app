@@ -1,0 +1,16 @@
+<div class="flex flex-column w-full justify-content-center align-content-center align-items-center">
+
+
+    @if (showWebcam) {
+    <webcam (initError)="handleInitError($event)"
+        [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+    <p-button label="Toma una Foto" [raised]="true" severity="warning" (onClick)="triggerSnapshot()"></p-button>
+    }
+
+    @if (webcamImage) {
+    <div class="snapshot">
+        <h2>Nice one!</h2>
+        <img [src]="webcamImage.imageAsDataUrl" />
+    </div>
+    }
+</div>

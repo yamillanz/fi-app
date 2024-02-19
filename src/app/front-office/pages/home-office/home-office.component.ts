@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, inject, signal } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { AppTopBarComponent } from '../topbar/app.topbar.component';
+import { AppTopBarComponent } from '../../topbar/app.topbar.component';
 import { SidebarModule } from 'primeng/sidebar';
-import { LayoutService } from '../../services/app.layout.service';
-import { AppMenuComponent } from '../menu/app.menu.component';
-import { AuthService } from '../../auth/services/auth.service';
+import { LayoutService } from '../../../services/app.layout.service';
+import { AppMenuComponent } from '../../menu/app.menu.component';
+import { AuthService } from '../../../auth/services/auth.service';
 @Component({
   selector: 'app-home-office',
   standalone: true,

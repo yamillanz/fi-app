@@ -19,7 +19,7 @@ export const routes: Routes = [
   {
     path: 'homelogin',
     loadComponent() {
-      return import('./front-office/home-office/home-office.component').then((m) => m.HomeOfficeComponent);
+      return import('./front-office/pages/home-office/home-office.component').then((m) => m.HomeOfficeComponent);
     },
     canActivate: [authGuard],
     canActivateChild: [authGuard],
@@ -28,6 +28,13 @@ export const routes: Routes = [
         path: '',
         loadComponent() {
           return import('./front-office/invoices-list/invoices-list.component').then((m) => m.InvoicesListComponent);
+        },
+        canActivate: [authGuard],
+      },
+      {
+        path: 'scan-invoice',
+        loadComponent() {
+          return import('./front-office/pages/scan-invoice/scan-invoice.component').then((m) => m.ScanInvoiceComponent);
         },
         canActivate: [authGuard],
       },
