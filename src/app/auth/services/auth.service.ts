@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   idToken,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from '@angular/fire/auth';
 import { signInWithRedirect } from '@firebase/auth';
 import { Observable } from 'rxjs';
@@ -44,7 +45,8 @@ export class AuthService {
 
   async signInWithGoogle(): Promise<void> {
     try {
-      await signInWithRedirect(this.auth, this.gLoginProvider);
+      // await signInWithRedirect(this.auth, this.gLoginProvider);
+      await signInWithPopup(this.auth, this.gLoginProvider);
       const id_TOKEN = await this.auth.currentUser?.getIdToken();
       console.log('🚀 ~ file: auth.service.ts:40 ~ AuthService ~ signInWithGoogle ~ id_TOKEN', id_TOKEN);
 
