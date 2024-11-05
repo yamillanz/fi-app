@@ -4,7 +4,7 @@ import { authGuard } from './shared/guards/auth.guard';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./components/landing/landing.module').then((m) => m.LandingModule),
+    loadChildren: () => import('./landing/landing.module').then((m) => m.LandingModule),
   },
   {
     path: 'login',

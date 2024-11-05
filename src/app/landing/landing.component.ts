@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LayoutService } from '../../services/app.layout.service';
+import { LayoutService } from '../services/app.layout.service';
 
 @Component({
   selector: 'app-landing',
@@ -10,7 +10,7 @@ import { LayoutService } from '../../services/app.layout.service';
 export class LandingComponent {
   visible: boolean = false;
   constructor(public layoutService: LayoutService, public router: Router) {}
-  showDialog() : void{
+  showDialog(): void {
     this.visible = true;
   }
 }
