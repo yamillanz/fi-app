@@ -1,0 +1,86 @@
+[
+  {
+    "number": "001",
+    "date_bill": "2022-01-01",
+    "total": 100,
+    "rif": "ABC123",
+    "address": "Calle 2"
+  },
+  {
+    "number": "002",
+    "date_bill": "2022-02-01",
+    "total": 200,
+    "rif": "DEF456",
+    "address": "Avenida 3"
+  },
+  {
+    "number": "003",
+    "date_bill": "2022-03-01",
+    "total": 300,
+    "rif": "GHI789",
+    "address": "Boulevard 4"
+  },
+  {
+    "number": "004",
+    "date_bill": "2022-04-01",
+    "total": 400,
+    "rif": "JKL012",
+    "address": "Calle 5"
+  },
+  {
+    "number": "005",
+    "date_bill": "2022-05-01",
+    "total": 500,
+    "rif": "MNO345",
+    "address": "Avenida 6"
+  },
+  {
+    "number": "006",
+    "date_bill": "2022-06-01",
+    "total": 600,
+    "rif": "PQR678",
+    "address": "Boulevard 7"
+  },
+  {
+    "number": "007",
+    "date_bill": "2022-07-01",
+    "total": 700,
+    "rif": "STU901",
+    "address": "Calle 8"
+  },
+  {
+    "number": "008",
+    "date_bill": "2022-08-01",
+    "total": 800,
+    "rif": "VWX234",
+    "address": "Avenida 9"
+  },
+  {
+    "number": "009",
+    "date_bill": "2022-09-01",
+    "total": 900,
+    "rif": "YZA567",
+    "address": "Boulevard 10"
+  },
+  {
+    "number": "010",
+    "date_bill": "2022-10-01",
+    "total": 1000,
+    "rif": "BCD890",
+    "address": "Calle 11"
+  },
+  {
+    "number": "011",
+    "date_bill": "2022-11-01",
+    "total": 1100,
+    "rif": "EFG123",
+    "address": "Avenida 12"
+  },
+  {
+    "number": "012",
+    "date_bill": "2022-12-01",
+    "total": 1200,
+    "rif": "HIJ456",
+    "address": "Boulevard 13"
+  }
+]
