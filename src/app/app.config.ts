@@ -27,8 +27,10 @@ export const appConfig: ApplicationConfig = {
           messagingSenderId: '41426323415',
         }),
       ),
+      provideDatabase(() => getDatabase()),
+      provideAuth(() => getAuth()),
     ),
-    importProvidersFrom(provideAuth(() => getAuth())),
-    importProvidersFrom(provideDatabase(() => getDatabase())),
+    // importProvidersFrom(provideAuth(() => getAuth())),
+    // importProvidersFrom(provideDatabase(() => getDatabase())),
   ],
 };

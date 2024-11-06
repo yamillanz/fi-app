@@ -1,3 +1,4 @@
+@defer {
 <p-table [value]="invoices" [tableStyle]="{'min-width': '40rem'}" [paginator]="true" [rows]="5"
     [showCurrentPageReport]="false">
     <ng-template pTemplate="caption">
@@ -32,6 +33,9 @@
         </tr>
     </ng-template>
 </p-table>
+} @loading (after 100ms; minimum 1s) {
+<p-progressSpinner ariaLabel="loading" />
+}
 <br>
 <br>
 <app-companies-list></app-companies-list>
