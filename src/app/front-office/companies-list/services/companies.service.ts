@@ -1,47 +1,65 @@
-import { Injectable, inject } from '@angular/core';
-import { Database, list, ref, push, update, object, listVal } from '@angular/fire/database';
+import { Injectable } from '@angular/core';
+import { Database, ref, get, child, remove, set, update } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CompaniesService {
-  private db = inject(Database);
-
-  constructor() {}
+  constructor(private db: Database) {}
 
   getCompanies() {
-    // const companies = list(ref(this.db, 'companies'));
-    // const companies = listVal(ref(this.db, 'companies')); 
-
-    // companies.subscribe((data) => {
-    //   console.log('🚀 ~ file: auth.service.ts:47 ~ AuthService ~ getCompanies ~ data', data);
-    // });
-
+    const dbRef = ref(this.db);
+    return get(child(dbRef, 'companies'))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          return snapshot.val();
+        } else {
+          console.log('No data available');
+          return [];
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        return [];
+      });
   }
 
-  createCompany() {
-    const newCompany = {
-      name: 'Company 1',
-      address: 'Address 1',
-      phone: '123456789',
-    };
-    push(ref(this.db, 'companies'), newCompany);
+  getCompany(id: string) {
+    const companyRef = ref(this.db, `companies/${id}`);
+    return get(companyRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          return snapshot.val();
+        } else {
+          console.log('No data available');
+          return null;
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        return null;
+      });
   }
 
-  updateCompany(id: string) {
-    const company = {
-      name: 'Company 1',
-      address: 'Address 1',
-      phone: '123456789',
-    };
-    update(ref(this.db, 'companies'), company);
+  deleteCompany(id: string) {
+    const companyRef = ref(this.db, `companies/${id}`);
+    return remove(companyRef)
+      .then(() => {
+        console.log(`Company with id ${id} deleted successfully`);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
-  removeCompany() {
-    const refDb: any = ref(this.db, 'companies');
-
-    // const query = orderByValue();
-
-    // remove(ref(this.db, 'companies'));
+  saveCompany(id: string, data: any) {
+    const companyRef = ref(this.db, `companies/${id}`);
+    return set(companyRef, data)
+      .then(() => {
+        console.log(`Company with id ${id} saved successfully`);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 }

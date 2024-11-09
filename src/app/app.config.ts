@@ -30,7 +30,5 @@ export const appConfig: ApplicationConfig = {
       provideDatabase(() => getDatabase()),
       provideAuth(() => getAuth()),
     ),
-    // importProvidersFrom(provideAuth(() => getAuth())),
-    // importProvidersFrom(provideDatabase(() => getDatabase())),
   ],
 };
