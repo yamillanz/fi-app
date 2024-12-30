@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
 @Component({
   selector: 'app-camera',
   standalone: true,
-  imports: [WebcamModule, NgIf, ButtonModule],
+  imports: [WebcamModule, ButtonModule],
   templateUrl: './camera.component.html',
   styleUrl: './camera.component.scss',
 })
